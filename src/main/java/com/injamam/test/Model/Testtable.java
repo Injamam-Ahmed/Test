@@ -7,11 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.*;
 import org.springframework.stereotype.Component;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "testdata")
 @Component
+@Data
 public class Testtable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,19 +24,6 @@ public class Testtable {
     private String firstName;
     @Column(name = "LastName")
     private String lastName;
-
-    @Override
-    public String toString() {
-        return "Testtable [firstName=" + firstName + ", id=" + id + ", lastName=" + lastName + "]";
-    }
-
-    public Testtable() {
-    }
-
-    public Testtable(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 
     public int getId() {
         return id;
@@ -57,5 +48,4 @@ public class Testtable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
 }

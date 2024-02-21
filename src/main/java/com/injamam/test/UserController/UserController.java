@@ -29,7 +29,7 @@ public class UserController {
         try {
             return testRepository.findAll();
         } catch (Exception ex) {
-            return null;
+            return null; 
 
         }
     }
